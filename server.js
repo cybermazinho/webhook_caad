@@ -7,6 +7,12 @@ app.get('/', (req, res) => {
     res.send('Hello, World!');
 });
 
+app.post('/webhooks', (req, res) => {
+    const data = req.body;
+    console.log('Received data:', data);
+    res.status(200).send('Data received');
+});
+
 app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+    console.log("Server is running on");
 });
